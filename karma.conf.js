@@ -3,11 +3,12 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jasmine'],
     files: [
-      'src/**/*.spec.js'
+      './node_modules/phantomjs-polyfill/bind-polyfill.js',
+      'src/**/*.spec.jsx'
     ],
     exclude: [],
     preprocessors: {
-      'src/**/*.spec.js': ['webpack'],
+      'src/**/*.spec.jsx': ['webpack'],
     },
     reporters: ['mocha'],
     port: 9876,

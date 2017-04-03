@@ -1,7 +1,5 @@
-var {defineSupportCode} = require('cucumber');
-
-defineSupportCode(function({After}) {
-  After(function() {
+module.exports = function () {
+  this.After(function() {
     return this.driver.quit();
   });
-});
+};

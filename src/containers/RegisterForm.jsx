@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import './RegisterForm.css';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -44,17 +44,17 @@ class RegisterForm extends React.Component {
         <div className="registerForm">
           <Paper className="paperStyle" zDepth={3}>
             <div className="inPaperStyle">
-              <h3>Register Form</h3>
+              <h3>{this.props.registerHeaderLabel || 'Register Form'}</h3>
               <br />
               <TextField id="name-field" hintText="Name" onChange={this.handleNameChange} value={this.state.name}/><br />
               <TextField id="surname-field" hintText="Surname" onChange={this.handleSurnameChange}/><br />
               <br />
-              <RaisedButton id="register-button" className="registerButton" label="Register" onTouchTap={this.handleRegister} />
+              <RaisedButton id="register-button" className="registerButton" label={this.props.registerButtonLabel || 'Register'} onTouchTap={this.handleRegister} />
             </div>
           </Paper>
           <Dialog
             id="thank-you-dialog"
-            title="Registered"
+            title={this.props.thankYouDialogTitle || "Registered"}
             actions={actions}
             modal={false}
             open={this.state.thankYouDialog}

@@ -12,7 +12,7 @@ function getEntrySources(sources) {
 module.exports = {
     entry: {
         app: getEntrySources([
-            './src/App.js'
+            './src/App.jsx'
         ])
     },
     output: {
@@ -33,7 +33,10 @@ module.exports = {
                 exclude: /node_modules/
             }
         ]
-       },
+    },
+    externals: {
+        'react/addons': true
+    },
     plugins: [
         new ExtractTextPlugin('public/style.css', {
             allChunks: true

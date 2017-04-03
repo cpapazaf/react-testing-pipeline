@@ -10,8 +10,8 @@ var CITY_SELECT_FIELD = {id: 'city-select-field'};
 var THANK_YOU_DIALOG = {id: 'thank-you-dialog'};
 var OK_DIALOG_BUTTON = {id: 'ok-dialog-button'};
 
-function RegisterPage(driver) {
-  BasePage.call(this, driver);
+function RegisterPage(context) {
+  BasePage.call(this, context);
   this.isDisplayed(APP_DIV).then(function(elementDisplayed) {
     assert.equal(elementDisplayed, true, 'The app page didnt load!');
   });
