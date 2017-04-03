@@ -1,0 +1,64 @@
+{
+  "name": "react-testing-pipeline",
+  "version": "0.0.1",
+  "description": "A streamelined testing pipeline for react components",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 3000 .",
+    "build": "NODE_ENV=production webpack -p",
+    "watch": "webpack-dev-server --hot --progress --colors",
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "test": "karma start --single-run --browsers PhantomJS",
+    "test:watch": "karma start --browsers PhantomJS",
+    "test:functional": "./node_modules/cucumber/bin/cucumber.js --require tests/functional/features/support tests/functional/features"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cpapazaf/react-testing-pipeline.git"
+  },
+  "keywords": [
+    "webpack",
+    "react"
+  ],
+  "author": "Christos Papazafeiropoulos <xpapazaf@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://github.com/cpapazaf/react-testing-pipeline",
+  "dependencies": {
+    "material-ui": "^0.17.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-tap-event-plugin": "^2.0.1"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
+    "babel-core": "^5.3.3",
+    "babel-loader": "^5.0.0",
+    "babel-preset-es2015": "6.5.0",
+    "css-loader": "^0.12.0",
+    "cucumber": "^1.3.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "http-server": "^0.8.0",
+    "jasmine-core": "^2.5.2",
+    "jsx-loader": "^0.13.2",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.0.2",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-webpack": "^1.5.1",
+    "node-libs-browser": "^0.5.0",
+    "node-sass": "^2.1.1",
+    "phantomjs": "^1.9.17",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^0.5.0",
+    "selenium-webdriver": "^3.3.0",
+    "style-loader": "^0.12.2",
+    "webpack": "^1.9.5",
+    "webpack-dev-server": "^1.8.2"
+  }
+}
