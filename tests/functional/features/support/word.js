@@ -1,4 +1,4 @@
-var {defineSupportCode} = require('cucumber');
+const {defineSupportCode} = require('cucumber');
 var seleniumWebdriver = require('selenium-webdriver');
 
 function CustomWorld() {
