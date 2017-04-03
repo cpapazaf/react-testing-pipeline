@@ -10,16 +10,29 @@ module.exports = function(config) {
     preprocessors: {
       'src/**/*.spec.jsx': ['webpack'],
     },
-    reporters: ['mocha'],
+    reporters: ['mocha', 'saucelabs'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: [/*'Chrome', */'PhantomJS'],
+    browsers: ['Chrome', 'PhantomJS', 'sl_ie_11'],
     singleRun: true,
     webpack: require('./webpack.config.js'),
     webpackMiddleware: {
       noInfo: true
+    },
+    sauceLabs: {
+      testName: 'Sample Unit Tests'
+    },
+    browserNoActivityTimeout: 60000,
+    captureTimeout: 120000,
+    customLaunchers: {
+        sl_ie_11: {
+          base: 'SauceLabs',
+          browserName: 'internet explorer',
+          platform: 'Windows 8.1',
+          version: '11'
+        }
     }
   });
 };
