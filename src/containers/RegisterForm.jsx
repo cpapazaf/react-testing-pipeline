@@ -41,10 +41,10 @@ class RegisterForm extends React.Component {
       />,
     ];
     return (
-        <div className="registerForm">
+        <div id="register-form" className="registerForm">
           <Paper className="paperStyle" zDepth={3}>
             <div className="inPaperStyle">
-              <h3>{this.props.registerHeaderLabel || 'Register Form'}</h3>
+              <h3 id="register-header-label">{this.props.registerHeaderLabel || 'Register Form'}</h3>
               <br />
               <TextField id="name-field" hintText="Name" onChange={this.handleNameChange} value={this.state.name}/><br />
               <TextField id="surname-field" hintText="Surname" onChange={this.handleSurnameChange}/><br />

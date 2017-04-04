@@ -1,0 +1,28 @@
+
+@objects
+  registerForm             id  register-form
+  registerHeaderLabel      id  register-header-label
+  nameField                id  name-field
+  surnameField             id  surname-field
+  registerButton           id  register-button
+
+
+= Main section =
+    registerForm:
+        contains registerHeaderLabel, nameField, surnameField, registerButton
+
+    registerHeaderLabel:
+        above nameField
+        inside partly registerForm ~ 40px top
+
+    nameField:
+        above surnameField
+
+    surnameField:
+        above registerButton
+        below nameField
+
+    registerButton:
+        below surnameField
+        inside partly registerForm 20px bottom right
+

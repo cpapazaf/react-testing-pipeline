@@ -12,7 +12,8 @@
     "test:unit": "karma start --single-run --browsers PhantomJS,Chrome",
     "test:unit:sl": "karma start --single-run --browsers sl_ie_11",
     "test:watch": "karma start --browsers PhantomJS",
-    "test:functional": "./node_modules/.bin/cucumberjs --require tests/functional/features/support tests/functional/features"
+    "test:functional": "./node_modules/.bin/cucumberjs --require tests/functional/features/support tests/functional/features",
+    "test:ui": "cd tests/ui/ && ./run.sh \"http://localhost:9001/?selectedKind=Register&selectedStory=empty&full=1\""
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "css-loader": "^0.12.0",
     "cucumber": "^1.3.2",
     "extract-text-webpack-plugin": "^1.0.1",
+    "galenframework-cli": "^2.3.3",
     "http-server": "^0.8.0",
     "jasmine-core": "^2.5.2",
     "jasmine-expect": "^3.7.0",
