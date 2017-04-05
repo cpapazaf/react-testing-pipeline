@@ -1,4 +1,5 @@
 Feature: Register
+  As a user I would like to regiter to the portal
 
   Scenario Outline: Multiple locations
     Given I visit the Register page

@@ -4,12 +4,13 @@ var driver,
     Promise = require('selenium-webdriver').promise,
     Until = require('selenium-webdriver').until;
 
-function BasePage(context) {
-    this.driver = context.driver;
+function BasePage(driver) {
+  this.driver = driver;
 }
 
 BasePage.prototype.visit = function(url) {
   this.driver.get(url);
+  //this.driver.sleep(3 * 1000);
 };
 
 BasePage.prototype.find = function(locator) {
@@ -44,9 +45,10 @@ BasePage.prototype.isDisplayed = function(locator) {
 
 BasePage.prototype.waitForIsDisplayed = function(locator, timeout) {
   var defer = Promise.defer();
-  this.driver.wait(Until.elementLocated(locator), timeout).then(function() {
+  var driver = this.driver;
+  driver.wait(Until.elementLocated(locator), timeout).then(function() {
     var element = driver.findElement(locator);
-    this.driver.wait(Until.elementIsVisible(element), timeout).then(function() {
+    driver.wait(Until.elementIsVisible(element), timeout).then(function() {
       defer.fulfill(true);
     }, function(error) {
       if (error.name === 'NoSuchElementError') {

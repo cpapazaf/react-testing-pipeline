@@ -37,7 +37,7 @@ class RegisterForm extends React.Component {
         label="OK"
         primary={true}
         keyboardFocused={true}
-        onTouchTap={this.handleDialogClose.bind(this)}
+        onClick={this.handleDialogClose.bind(this)}
       />,
     ];
     return (
@@ -49,18 +49,19 @@ class RegisterForm extends React.Component {
               <TextField id="name-field" hintText="Name" onChange={this.handleNameChange} value={this.state.name}/><br />
               <TextField id="surname-field" hintText="Surname" onChange={this.handleSurnameChange}/><br />
               <br />
-              <RaisedButton id="register-button" className="registerButton" label={this.props.registerButtonLabel || 'Register'} onTouchTap={this.handleRegister} />
+              <RaisedButton id="register-button" className="registerButton" label={this.props.registerButtonLabel || 'Register'} onClick={this.handleRegister} />
             </div>
           </Paper>
           <Dialog
-            id="thank-you-dialog"
             title={this.props.thankYouDialogTitle || "Registered"}
             actions={actions}
             modal={false}
             open={this.state.thankYouDialog}
             onRequestClose={this.handleDialogClose}
           >
-          Thank you for registering {this.state.name} {this.state.surname}!
+            <div id="thank-you-dialog">
+              Thank you for registering {this.state.name} {this.state.surname}!
+            </div>
           </Dialog>
         </div>
     );

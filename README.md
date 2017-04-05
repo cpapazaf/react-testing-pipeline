@@ -36,6 +36,8 @@ React Testing Pipeline is a seed project demoing the different stages someone ca
       ```
 4. Run the functional (Cucumber) tests
       ```js
+      npm run build
+      npm start
       npm run test:functional
       ```
 5. Run the functional (Cucumber) tests on Saucelabs --- Missing, I'll fix soon

@@ -3,6 +3,7 @@ var BasePage = require('./BasePage');
 var assert = require('assert');
 
 var APP_DIV = {id: 'app'};
+var REGISTER_HEADER_LABEL = {id: 'register-header-label'};
 var REGISTER_BUTTON = {id: 'register-button'};
 var NAME_FIELD = {id: 'name-field'};
 var SURNAME_FIELD = {id: 'surname-field'};
@@ -10,8 +11,9 @@ var CITY_SELECT_FIELD = {id: 'city-select-field'};
 var THANK_YOU_DIALOG = {id: 'thank-you-dialog'};
 var OK_DIALOG_BUTTON = {id: 'ok-dialog-button'};
 
-function RegisterPage(context) {
-  BasePage.call(this, context);
+function RegisterPage(driver, url) {
+  BasePage.call(this, driver);
+  this.visit(url);
   this.isDisplayed(APP_DIV).then(function(elementDisplayed) {
     assert.equal(elementDisplayed, true, 'The app page didnt load!');
   });
