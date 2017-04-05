@@ -1,6 +1,6 @@
 # React Testing Pipeline 
 
-React Testing Pipeline is a seed project demoing the different stages someone can test React applications!
+React Testing Pipeline is a seed project demoing the sevelal testing stages of a React application!
 
 
 <p align="center">
